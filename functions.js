@@ -1,3 +1,3 @@
 function send(text) {
-  return resp = (text);
+  return resp = text;
 }
