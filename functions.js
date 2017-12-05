@@ -49,7 +49,7 @@ function userRoles(id) {
   if(!id) return send("Error! You must have a UserID for \`userRoles\`! \`\`\`js\nuserRoles(id)\`\`\`");
   if(id.match(/[a-z]/i) == true) return send("Nope! The UserID does not contain any letters and/or special characters");
   var roles = new Array();
-  for (var x = 0; x < ServerRoles..length; x++) {
+  for (var x = 0; x < ServerRoles.length; x++) {
     if(MemberHasRole(id, ServerRoles[x])) {
       roles.push(ServerRoles[x]);
     } else {
