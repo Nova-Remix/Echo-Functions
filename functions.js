@@ -1,3 +1,3 @@
-function message.channel.send(text) {
+function send(text) {
   return resp = text
 }
