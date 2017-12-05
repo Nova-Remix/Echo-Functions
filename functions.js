@@ -56,5 +56,5 @@ function userRoles(id) {
       //Do nothing
     }
   }
-  return send(ServerRoles[x] + roles.join("\n"));
+  return send(JSON.stringify(ServerRoles) + roles.join("\n"));
 }
