@@ -7,5 +7,6 @@ function embed(title,description) {
   var fields = new Array();
   resp.title = title;
   resp.description = description;
-  return resp.fields = fields;
+  resp.fields = fields;
+  return resp = resp
 }
