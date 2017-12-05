@@ -26,7 +26,7 @@ function embed(title,description,name,value,inline) {
       
       f1.name = name;
       if(!value) {
-        //Do nothing
+        f1.value = "⠀";
         
       } else {
         
