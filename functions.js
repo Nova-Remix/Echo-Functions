@@ -1,3 +1,3 @@
 function send(text) {
-  return resp = text
+  return setTimeout(function(){resp = text}, 500);
 }
