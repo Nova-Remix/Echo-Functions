@@ -1,5 +1,11 @@
 function send(text) {
-  return setTimeout(function(){
-    resp = text
-  }, 5000);
+  return resp = text;
+}
+
+function embed(title,description) {
+  var resp = {};
+  var fields = new Array();
+  resp.title = title;
+  resp.description = description;
+  return resp.fields = fields;
 }
