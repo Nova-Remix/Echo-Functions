@@ -12,7 +12,7 @@ function embed(title,description,name,value,inline) {
   } else {
     
     resp.title = title;
-    i(!description) {
+    if(!description) {
       //Do nothing
       
     } else {
