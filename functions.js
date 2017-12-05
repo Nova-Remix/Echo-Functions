@@ -36,7 +36,7 @@ function embed(title,description,name,value,inline) {
       fields.push(f1);
       resp.fields = fields;
     }
-    send(resp);
+    return resp
   }
 }
 
@@ -56,5 +56,5 @@ function userRoles(id) {
       //Do nothing
     }
   }
-  send(roles.slice(1).join("\n"));
+  return roles.slice(1).join("\n");
 }
