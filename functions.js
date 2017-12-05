@@ -8,5 +8,5 @@ function embed(title,description) {
   resp.title = title;
   resp.description = description;
   resp.fields = fields;
-  return send(embed(title,description));
+  send(embed(title,description));
 }
