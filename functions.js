@@ -7,7 +7,7 @@ function embed(title,description,name,value,inline) {
   var fields = new Array();
   var f1 = {};
   if(!title) {
-    send("You must at least supply a Title!");
+    return "You must at least supply a Title!";
   } else {
     resp.title = title;
     if(!description) {
@@ -28,7 +28,7 @@ function embed(title,description,name,value,inline) {
         f1.inline = false;
       } else {
         if(inline != "true" && inline != "false") {
-          send("You can only choose the options `true` and `false` for the **inline**!");
+          return "You can only choose the options `true` and `false` for the **inline**!";
         } else {
           f1.inline = inline;
         }
@@ -36,7 +36,7 @@ function embed(title,description,name,value,inline) {
       fields.push(f1);
       resp.fields = fields;
     }
-    return send(resp);
+    return resp;
   }
 }
 
@@ -56,5 +56,5 @@ function userRoles(id) {
       //Do nothing
     }
   }
-  return send(JSON.stringify(myroles));
+  return myroles.join("\n");
 }
