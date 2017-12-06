@@ -67,3 +67,15 @@ function userRoles(id) {
   }
   return myroles.join("\n");
 }
+
+function string(what) {
+  return JSON.stringify(what);
+}
+
+function parse(what) {
+  return JSON.parse(what);
+}
+
+function int(what) {
+  return parseInt(what);
+}
