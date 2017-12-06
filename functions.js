@@ -48,9 +48,13 @@ function userRoles(id) {
   var letters = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l","M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"]
   if(!id) return send("Error! You must have a UserID for \`userRoles\`! \`\`\`js\nuserRoles(id)\`\`\`");
   
+  var anyLetters = id.split("");
+  
   for(var i = 0; i < letters.length; i++) {
-    if(id.hasOwnProperty(letters[i])) {
-      send("Nope! The UserID does not contain any letters and/or special characters");
+    if(letter[anyLetters[i]]) {
+      send("Nope! The **UserID** does not contain any letters and/or special characters");
+    } else {
+      //Do Nothing
     }
   }
   var myroles = new Array();
