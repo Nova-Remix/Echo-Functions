@@ -51,7 +51,7 @@ function userRoles(id) {
   var anyLetters = id.split("");
   
   for(var i = 0; i < letters.length; i++) {
-    if(letters[anyLetters[i]]) {
+    if(letters.hasOwnProperty[anyLetters[i]]) {
       return send("Nope! The **UserID** does not contain any letters and/or special characters");
     } else {
       //Do Nothing
