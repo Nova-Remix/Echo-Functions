@@ -50,7 +50,7 @@ function userRoles(id) {
   //if(id.match(/[a-z]/i) == true) return send("Nope! The UserID does not contain any letters and/or special characters");
   var myroles = new Array();
   for (var x = 0; x < Server.Roles.length; x++) {
-    if(MemberHasRole(id, Server.Roles[x])) {
+    if(MemberHasRole(id, Server.Roles[x].Name)) {
       myroles.push(Server.Roles[x].Name);
     } else {
       //Do nothing
