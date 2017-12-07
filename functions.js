@@ -65,7 +65,7 @@ function userRoles(id) {
       //Do nothing
     }
   }
-  return myroles.join("\n");
+  return myroles;
 }
 
 function string(what) {
