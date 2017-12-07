@@ -9,20 +9,28 @@ function embed(title,description,name,value,inline) {
   if(!title) {
     return "You must at least supply a Title!";
   } else {
-    resp.title = title;
-    if(!description) {
+    if(title === "BL") {
+      //Do Nothing
+    } else {
+      resp.title = title;
+    }
+    if(!description || description === "BL) {
       //Do nothing
     } else {
       resp.description = description;
     }
-    if(!name) {
+    if(!name || name === "BL") {
       //Do nothing
     } else {
       f1.name = name;
-      if(!value) {
-        f1.value = "⠀";
-      } else {
+      if(value) {
         f1.value = value;
+      } else {
+        if(!value && name === "BL" || value && name === "BL") {
+          //Do Nothing
+        } else {
+          f1.value = "⠀";
+        }
       }
       if(!inline) {
         f1.inline = false;
