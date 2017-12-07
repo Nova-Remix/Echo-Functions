@@ -47,7 +47,7 @@ function embed(title, description, name, value, color) {
       if(!value && !name) {
         //Do Nothing
       } else {
-        f1.value = "⠀";
+        f1.value = value;
       }
     }
   }
