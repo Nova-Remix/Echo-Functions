@@ -20,9 +20,12 @@ function embed(title,description,name,value,inline) {
     } else {
       resp.description = description;
     }
-    if(!name || name === "BL") {
-      //Do nothing
-    } else {
+    if(!name) {
+      //Do Nothing
+    } else if(name === "BL") {
+      f1.name = "⠀";
+    }
+  } else {
       f1.name = name;
       if(value) {
         f1.value = value;
