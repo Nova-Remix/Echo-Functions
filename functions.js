@@ -8,7 +8,7 @@ function embed(title,description,name,value,inline) {
   var fields = new Array();
   var f1 = {};
   if(!title) {
-    return send("You must at least supply a Title!");
+    return send("I can't send an empty Embed!");
   } else {
     if(title === "BL") {
       resp.title = "⠀";
