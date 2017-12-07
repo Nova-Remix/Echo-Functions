@@ -53,7 +53,7 @@ function embed(title, description, name, value, inline, color) {
   }
   
   if(!inline) {
-    f1.inline = false;
+    //Do Nothing
   } else {
     if(name === "BL" && value === "BL") {
       //Do Nothing
