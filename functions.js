@@ -63,8 +63,10 @@ function embed(title,description,name,value,inline) {
   }
   
   try {
-    fields.push(f1);
-    resp.fields = fields;
+    if(f1.name) {
+      fields.push(f1);
+      resp.fields = fields;
+    }
   } catch (error) {
     send(error);
   }
