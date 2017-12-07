@@ -58,7 +58,11 @@ function embed(title, description, name, value, inline, color) {
     if(inline != "true" && inline != "false") {
       return send("You can only choose the options `"true"` and `"false"` for the **inline**!");
     } else {
-      f1.inline = inline;
+      if(inline === "true") {
+        f1.inline = true;
+      } else {
+        f1.inline = false;
+      }
     }
   }
   
