@@ -7,6 +7,7 @@ function embed(title,description,name,value,inline) {
   var resp = {};
   var fields = new Array();
   var f1 = {};
+  
   if(!title) {
     return send("I can't send an empty Embed!");
   } else {
@@ -15,53 +16,59 @@ function embed(title,description,name,value,inline) {
     } else {
       resp.title = title;
     }
-    
-    if(!description) {
-      //Do nothing
-    } else {
-      if(description === "BL") {
-        //resp.description = "⠀";
-      } else {
-        resp.description = description;
-      }
-      
-    if(!name) {
-      //Do Nothing
-    } else {
-      if(name === "BL") {
-        f1.name = "⠀";
-      } else {
-        f1.name = name;
-      }
-    }
-      
-      if(value) {
-        f1.value = value;
-      } else {
-        if(!value && name === "BL" || value && name === "BL" || !value && !name) {
-          //Do Nothing
-        } else {
-          f1.value = "⠀";
-        }
-      }
-      if(!inline) {
-        f1.inline = false;
-      } else {
-        if(inline != "true" && inline != "false") {
-          return send("You can only choose the options `true` and `false` for the **inline**!");
-        } else {
-          f1.inline = inline;
-        }
-      }
-      try {
-        fields.push(f1);
-        resp.fields = fields;
-      } catch (error) {
-        send(error);
-      }
-    }
-    return resp;
   }
+    
+  if(!description) {
+    //Do nothing
+  } else {
+    if(description === "BL") {
+      //resp.description = "⠀";
+    } else {
+      resp.description = description;
+    }
+  }
+      
+  if(!name) {
+    //Do Nothing
+  } else {
+    if(name === "BL") {
+      f1.name = "⠀";
+    } else {
+      f1.name = name;
+    }
+  }
+      
+  if(!value && name === "BL") {
+    //Do Nothing
+  } else {
+    if(value && name === "BL") {
+      f1.value = value;
+    } else {
+      if(!value && !name) {
+        //Do Nothing
+      } else {
+        f1.value = "⠀";
+      }
+    }
+  }
+  
+  if(!inline) {
+    f1.inline = false;
+  } else {
+    if(inline != "true" && inline != "false") {
+      return send("You can only choose the options `true` and `false` for the **inline**!");
+    } else {
+      f1.inline = inline;
+    }
+  }
+  
+  try {
+    fields.push(f1);
+    resp.fields = fields;
+  } catch (error) {
+    send(error);
+  }
+  return resp;
 }
 
 function rNum(min, max) {
