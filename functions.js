@@ -11,7 +11,7 @@ function embed(title,description,name,value,inline) {
     return send("I can't send an empty Embed!");
   } else {
     if(title === "BL") {
-      resp.title = "⠀";
+      //resp.title = "⠀";
     } else {
       resp.title = title;
     }
@@ -20,7 +20,7 @@ function embed(title,description,name,value,inline) {
       //Do nothing
     } else {
       if(description === "BL") {
-        resp.description = "⠀";
+        //resp.description = "⠀";
       } else {
         resp.description = description;
       }
