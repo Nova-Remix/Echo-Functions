@@ -55,7 +55,7 @@ function embed(title, description, name, value, color) {
   if(!color) {
     //Do Nothing
   } else {
-    if(color.indexOf("#") < 1) {
+    if(color.indexOf("#") < 0) {
       return send("The color must be a Hex Code! **#rrggbb**");
     } else {
       if(color.length > 7) {
