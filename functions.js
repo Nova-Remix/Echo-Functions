@@ -1,4 +1,5 @@
 function send(text) {
+  if(!text) return resp = "I can't send an empty message! Please examine the **send()** function carefully.
   return resp = text;
 }
 
@@ -14,7 +15,7 @@ function embed(title,description,name,value,inline) {
     } else {
       resp.title = title;
     }
-    if(!description || description === "BL) {
+    if(!description || description === "BL") {
       //Do nothing
     } else {
       resp.description = description;
@@ -49,6 +50,7 @@ function embed(title,description,name,value,inline) {
 }
 
 function rNum(min, max) {
+  if(!min || !max) return send("You need to set up a **minimum** number and a **maximum** number");
   return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -59,7 +61,7 @@ function userRoles(id) {
   var anyLetters = id.split("");
   
   for(var i = 0; i < letters.length; i++) {
-    if(letters.hasOwnProperty[anyLetters[i]]) {
+    if(letters..includes(anyLetters[i]) {
       return send("Nope! The **UserID** does not contain any letters and/or special characters");
     } else {
       //Do Nothing
@@ -77,13 +79,16 @@ function userRoles(id) {
 }
 
 function string(what) {
+  if(!what) return send("I can't **string()** something that's not there!");
   return JSON.stringify(what);
 }
 
 function parse(what) {
+  if(!what) return send("I can't **parse()** something that's not there!");
   return JSON.parse(what);
 }
 
 function int(what) {
+  if(!what) return send("I can't **int()** something that's not there!");
   return parseInt(what);
 }
