@@ -3,7 +3,7 @@ function send(text) {
   return resp = text;
 }
 
-function embed(title,description,name,value,inline) {
+function embed(title, description, name, value, inline, color) {
   var resp = {};
   var fields = new Array();
   var f1 = {};
@@ -61,6 +61,11 @@ function embed(title,description,name,value,inline) {
       f1.inline = inline;
     }
   }
+  
+  if(!color) {
+    //Do Nothing
+  } else {
+    if(!color.startsWith("#")
   
   try {
     if(f1.name) {
