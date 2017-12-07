@@ -39,7 +39,7 @@ function embed(title,description,name,value,inline) {
   }
       
   if(!value && name === "BL") {
-    //Do Nothing
+    f1.value = "⠀";
   } else {
     if(value && name === "BL") {
       f1.value = value;
