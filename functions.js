@@ -65,7 +65,16 @@ function embed(title, description, name, value, inline, color) {
   if(!color) {
     //Do Nothing
   } else {
-    if(!color.startsWith("#")
+    if(!color.startsWith("#")) {
+      return send("The color must be a Hex Code! **#rrggbb**");
+    } else {
+      if(color.length > 7) {
+        return send("Incorrect Color Format! **#rrggbb**");
+      } else {
+        HTML2Int(color);
+      }
+    }
+  }
   
   try {
     if(f1.name) {
