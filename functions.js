@@ -3,7 +3,7 @@ function send(text) {
   return resp = text;
 }
 
-function embed(title, description, name, value, inline, color) {
+function embed(title, description, name, value, color) {
   var resp = {};
   var fields = new Array();
   var f1 = {};
@@ -48,24 +48,6 @@ function embed(title, description, name, value, inline, color) {
         //Do Nothing
       } else {
         f1.value = "⠀";
-      }
-    }
-  }
-  
-  if(!inline) {
-    //Do Nothing
-  } else {
-    if(name === "BL" && value === "BL") {
-      //Do Nothing
-    } else {
-      if(inline != "true" && inline != "false") {
-        return send("You can only choose the options `"true"` and `"false"` for the **inline**!");
-      } else {
-        if(inline === "true") {
-          f1.inline = true;
-        } else {
-          f1.inline = false;
-        }
       }
     }
   }
