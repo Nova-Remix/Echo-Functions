@@ -11,26 +11,33 @@ function embed(title,description,name,value,inline) {
     return "You must at least supply a Title!";
   } else {
     if(title === "BL") {
-      //Do Nothing
+      resp.title = "⠀";
     } else {
       resp.title = title;
     }
-    if(!description || description === "BL") {
+    if(!description) {
       //Do nothing
     } else {
-      resp.description = description;
-    }
+      if(description === "BL") {
+        resp.description = "⠀";
+      } else {
+        resp.description = description;
+      }
+      
     if(!name) {
       //Do Nothing
-    } else if(name === "BL") {
-      f1.name = "⠀";
+    } else {
+      if(name === "BL") {
+        f1.name = "⠀";
+      } else {
+        f1.name = name;
+      }
     }
-  } else {
-      f1.name = name;
+      
       if(value) {
         f1.value = value;
       } else {
-        if(!value && name === "BL" || value && name === "BL") {
+        if(!value && name === "BL" || value && name === "BL" || !value && !name) {
           //Do Nothing
         } else {
           f1.value = "⠀";
