@@ -8,7 +8,7 @@ function embed(title,description,name,value,inline) {
   var fields = new Array();
   var f1 = {};
   if(!title) {
-    return "You must at least supply a Title!";
+    return send("You must at least supply a Title!");
   } else {
     if(title === "BL") {
       resp.title = "⠀";
@@ -47,7 +47,7 @@ function embed(title,description,name,value,inline) {
         f1.inline = false;
       } else {
         if(inline != "true" && inline != "false") {
-          return "You can only choose the options `true` and `false` for the **inline**!";
+          return send("You can only choose the options `true` and `false` for the **inline**!");
         } else {
           f1.inline = inline;
         }
@@ -71,7 +71,7 @@ function userRoles(id) {
   var anyLetters = id.split("");
   
   for(var i = 0; i < letters.length; i++) {
-    if(letters.includes(anyLetters[i]) {
+    if(letters.indexOf(anyLetters[i]) > -1) {
       return send("Nope! The **UserID** does not contain any letters and/or special characters");
     } else {
       //Do Nothing
