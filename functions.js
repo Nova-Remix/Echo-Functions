@@ -55,7 +55,7 @@ function embed(title, description, name, value, inline, color) {
   if(!inline) {
     f1.inline = false;
   } else {
-    if(name === "BL" && value = "BL") {
+    if(name === "BL" && value === "BL") {
       //Do Nothing
     } else {
       if(inline != "true" && inline != "false") {
