@@ -15,6 +15,7 @@ function embed(title,description,name,value,inline) {
     } else {
       resp.title = title;
     }
+    
     if(!description) {
       //Do nothing
     } else {
@@ -52,8 +53,12 @@ function embed(title,description,name,value,inline) {
           f1.inline = inline;
         }
       }
-      fields.push(f1);
-      resp.fields = fields;
+      try {
+        fields.push(f1);
+        resp.fields = fields;
+      } catch (error) {
+        send(error);
+      }
     }
     return resp;
   }
