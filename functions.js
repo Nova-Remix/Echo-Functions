@@ -161,12 +161,16 @@ function search(arr, target) {
   }
 }
 
+
+
+//MAKE ARRAYS
 function makeArray(use1,use2,use3,use4,use5,use6,use7,use8,use9,use10) {
   //Check USE1
   if(!use1) {
     return send("You have tried to create an empty array! Not good!");
   } else {
     var arr = new Array;
+    arr.push(use1);
   }
   //Check USE2
   if(!use2) {
