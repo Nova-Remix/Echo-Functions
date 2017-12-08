@@ -58,7 +58,7 @@ function embed(title, description, name, value, color) {
     if(color.indexOf("#") < 0) {
       return send("The color must be a Hex Code! **#rrggbb**");
     } else {
-      if(color.length > 7) {
+      if(color.length > 7 || color.length < 7) {
         return send("Incorrect Color Format! **#rrggbb**");
       } else {
         resp.color = HTML2Int(color);
