@@ -136,4 +136,5 @@ function search(arr, target) {
     }
   } else {
     send("This is not an array!");
+  }
 }
