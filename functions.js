@@ -1,8 +1,12 @@
+//SEND
 function send(text) {
   if(!text) return resp = "I can't send an empty message! Please examine the **send()** function carefully.";
   return resp = text;
 }
 
+
+
+//EMBED
 function embed(title, description, name, value, color) {
   var resp = {};
   var fields = new Array();
@@ -77,11 +81,17 @@ function embed(title, description, name, value, color) {
   return resp;
 }
 
+
+
+//RANDOM NUMBER
 function rNum(min, max) {
   if(!min || !max) return send("You need to set up a **minimum** number and a **maximum** number");
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+
+
+//USER ROLES
 function userRoles(id) {
   var letters = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l","M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"];
   if(!id) return send("Error! You must have a UserID for \`userRoles\`! \`\`\`js\nuserRoles(id)\`\`\`");
@@ -106,21 +116,33 @@ function userRoles(id) {
   return myroles;
 }
 
+
+
+//STRING
 function string(what) {
   if(!what) return send("I can't **string()** something that's not there!");
   return JSON.stringify(what);
 }
 
+
+
+//PARSE
 function parse(what) {
   if(!what) return send("I can't **parse()** something that's not there!");
   return JSON.parse(what);
 }
 
+
+
+//PARSEINT
 function int(what) {
   if(!what) return send("I can't **int()** something that's not there!");
   return parseInt(what);
 }
 
+
+
+//SEARCH ARRAYS
 function search(arr, target) {
   if (!arr) {
     return send("Where tf is your damn variable?");
