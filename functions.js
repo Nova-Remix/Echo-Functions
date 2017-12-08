@@ -122,10 +122,10 @@ function int(what) {
 }
 
 function search(usefor,find) {
-  if(!usefor) {
+  if(!usefor || usefor === "" || usefor === null) {
     return send("You need to provide a variable for me to search!");
   } else {
-    if(!find) {
+    if(!find || find === "" || find === null) {
       return send("You need to provide a keyword for me to search for!");
     } else {
       return usefor.indexOf(find) > -1;
