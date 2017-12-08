@@ -122,7 +122,7 @@ function int(what) {
 }
 
 function search(usefor,find) {
-  if(!usefor) return send("You need to provide an array for me to search!");
+  if(!usefor) return send("You need to provide a variable for me to search!");
   if(!find) return send("You need to provide a keyword for me to search for!");
   if(Array.isArray(usefor) === true) {
     return send("The variable you have provided is **NOT** an array.");
