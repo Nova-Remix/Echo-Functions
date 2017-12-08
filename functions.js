@@ -61,7 +61,7 @@ function embed(title, description, name, value, color) {
       if(color.length > 7) {
         return send("Incorrect Color Format! **#rrggbb**");
       } else {
-        return HTML2Int(color);
+        return resp.color = HTML2Int(color);
       }
     }
   }
