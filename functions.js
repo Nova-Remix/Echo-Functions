@@ -161,12 +161,66 @@ function search(arr, target) {
   }
 }
 
-function makeArray(use1) {
+function makeArray(use1,use2,use3,use4,use5,use6,use7,use8,use9,use10) {
+  //Check USE1
   if(!use1) {
     return send("You have tried to create an empty array! Not good!");
   } else {
     var arr = new Array;
-    arr.push(use1);
-    return send(string(arr));
+  }
+  //Check USE2
+  if(!use2) {
+    return string(arr);
+  } else {
+    arr.push(use2);
+  }
+  //Check USE3
+  if(!use3) {
+    return string(arr);
+  } else {
+    arr.push(use3);
+  }
+  //Check USE4
+  if(!use4) {
+    return string(arr);
+  } else {
+    arr.push(use4);
+  }
+  //Check USE5
+  if(!use5) {
+    return string(arr);
+  } else {
+    arr.push(use5);
+  }
+  //Check USE6
+  if(!use6) {
+    return string(arr);
+  } else {
+    arr.push(use6);
+  }
+    //Check USE7
+  if(!use7) {
+    return string(arr);
+  } else {
+    arr.push(use7);
+  }
+    //Check USE8
+  if(!use8) {
+    return string(arr);
+  } else {
+    arr.push(use8);
+  }
+    //Check USE9
+  if(!use9) {
+    return string(arr);
+  } else {
+    arr.push(use9);
+  }
+    //Check USE10
+  if(!use10) {
+    return string(arr);
+  } else {
+    arr.push(use10);
+    return string(arr);
   }
 }
