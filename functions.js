@@ -163,7 +163,7 @@ function search(arr, target) {
 
 function makeArray(a, b, c, d, e, f, g, h) {
   if(!a) return send("You have tried to create an empty array! Not good!");
-  var arr = new Array();
+  var arr = [];
   arr.push(a);
   if(!b) 
     //Do nothing
