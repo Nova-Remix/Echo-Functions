@@ -134,5 +134,6 @@ function search(arr, target) {
     } else {
       return send('False');
     }
-  }
+  } else {
+    send("This is not an array!");
 }
