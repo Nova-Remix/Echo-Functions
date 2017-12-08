@@ -162,37 +162,39 @@ function search(arr, target) {
 }
 
 function makeArray(a, b, c, d, e, f, g, h) {
-  if(!a) return send("You have tried to create an empty array! Not good!");
+  if(!a) {
+    return send("You have tried to create an empty array! Not good!");
+  } else {
   var arr = [];
-  return arr.push(a);
+  arr.push(a);
   if(!b) 
     //Do nothing
   } else {
-    return arr.push(b);
+    arr.push(b);
     if(!c) {
       //Do nothing
     } else {
-      return arr.push(c);
+      arr.push(c);
       if(!d) {
         //Do nothing
       } else {
-        return arr.push(d);
+        arr.push(d);
         if(!e) {
           //Do nothing
         } else {
-          return arr.push(e);
+          arr.push(e);
           if(!f) {
             //Do nothing
           } else {
-            return arr.push(f);
+            arr.push(f);
             if(!g) {
               //Do nothing
             } else {
-              return arr.push(g);
+              arr.push(g);
               if(!h) {
                 //Do nothing
               } else {
-                return arr.push(h);
+                arr.push(h);
               }
             }
           }
@@ -201,4 +203,5 @@ function makeArray(a, b, c, d, e, f, g, h) {
     }
   }
   return arr;
+  }
 }
