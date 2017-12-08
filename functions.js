@@ -2,12 +2,12 @@
 function send(text) {
   if(!text) return resp = "I can't send an empty message! Please examine the **send()** function carefully.";
   
-  if(text.indexOf("${{") > -1 && text.indexOf("}}") > -1) {
+  /*if(text.indexOf("${{") > -1 && text.indexOf("}}") > -1) {
     var sendwhat = text.replace('${{', '" + ');
     sendwhat = sendwhat.replace('}}', ' + "');
-  } else {
+  } else {*/
     var sendwhat = text;
-  }
+  //}
   return resp = sendwhat;
 }
 
