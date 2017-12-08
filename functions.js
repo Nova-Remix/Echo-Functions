@@ -164,35 +164,35 @@ function search(arr, target) {
 function makeArray(a, b, c, d, e, f, g, h) {
   if(!a) return send("You have tried to create an empty array! Not good!");
   var arr = [];
-  arr.push(a);
+  return arr.push(a);
   if(!b) 
     //Do nothing
   } else {
-    arr.push(b);
+    return arr.push(b);
     if(!c) {
       //Do nothing
     } else {
-      arr.push(c);
+      return arr.push(c);
       if(!d) {
         //Do nothing
       } else {
-        arr.push(d);
+        return arr.push(d);
         if(!e) {
           //Do nothing
         } else {
-          arr.push(e);
+          return arr.push(e);
           if(!f) {
             //Do nothing
           } else {
-            arr.push(f);
+            return arr.push(f);
             if(!g) {
               //Do nothing
             } else {
-              arr.push(g);
+              return arr.push(g);
               if(!h) {
                 //Do nothing
               } else {
-                arr.push(h);
+                return arr.push(h);
               }
             }
           }
