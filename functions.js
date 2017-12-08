@@ -121,12 +121,12 @@ function int(what) {
   return parseInt(what);
 }
 
-function search(array,find) {
-  if(!array) return send("You need to provide an array for me to search!");
+function search(usefor,find) {
+  if(!usefor) return send("You need to provide an array for me to search!");
   if(!find) return send("You need to provide a keyword for me to search for!");
-  if(typeof array === "string") {
+  if(!Array.isArray(usefor)) {
     return send("The variable you have provided is **NOT** an array.");
   } else {
-    return array.indexOf(find) > -1
+    return usefor.indexOf(find) > -1
   }
 }
