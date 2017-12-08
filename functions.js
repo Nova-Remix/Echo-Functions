@@ -61,7 +61,7 @@ function embed(title, description, name, value, color) {
       if(color.length > 7) {
         return send("Incorrect Color Format! **#rrggbb**");
       } else {
-        HTML2Int(color);
+        return HTML2Int(color);
       }
     }
   }
@@ -83,7 +83,7 @@ function rNum(min, max) {
 }
 
 function userRoles(id) {
-  var letters = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l","M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"]
+  var letters = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l","M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"];
   if(!id) return send("Error! You must have a UserID for \`userRoles\`! \`\`\`js\nuserRoles(id)\`\`\`");
   
   var anyLetters = id.split("");
