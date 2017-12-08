@@ -167,6 +167,6 @@ function makeArray(use1) {
   } else {
     var arr = new Array;
     arr.push(use1);
-    return send(arr);
+    return send(string(arr));
   }
 }
