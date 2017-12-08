@@ -125,10 +125,10 @@ function search(usefor,find) {
   if(!usefor && !find) {
     return send("You must include both the variable to search and the keyword too search for.");
   } else {
-    if(!usefor || usefor === "" || usefor === null) {
+    if(!usefor || string(usefor) === "[]" || usefor === "") {
       return send("You need to provide a variable for me to search!");
     } else {
-      if(!find || find === "" || find === null) {
+      if(!find || string(find) === "[]" || find === "") {
         return send("You need to provide a keyword for me to search for!");
       } else {
         return usefor.indexOf(find) > -1;
