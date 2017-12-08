@@ -126,7 +126,9 @@ function userRoles(id) {
 
 
 
-//STRING
+/*=======================
+STRING
+=======================*/
 function string(what) {
   if(!what) return send("I can't **string()** something that's not there!");
   return JSON.stringify(what);
@@ -134,7 +136,9 @@ function string(what) {
 
 
 
-//PARSE
+/*======================
+PARSE
+======================*/
 function parse(what) {
   if(!what) return send("I can't **parse()** something that's not there!");
   return JSON.parse(what);
@@ -142,7 +146,9 @@ function parse(what) {
 
 
 
-//PARSEINT
+/*====================
+PARSEINT
+====================*/
 function int(what) {
   if(!what) return send("I can't **int()** something that's not there!");
   return parseInt(what);
@@ -150,7 +156,9 @@ function int(what) {
 
 
 
-//SEARCH ARRAYS
+/*==============================
+SEARCH ARRAYS
+==============================*/
 function search(arr, target) {
   if (!arr) {
     return send("Where tf is your damn variable?");
@@ -171,7 +179,9 @@ function search(arr, target) {
 
 
 
-//MAKE ARRAYS
+/*========================================================================
+MAKE ARRAYS
+========================================================================*/
 function makeArray(use1,use2,use3,use4,use5,use6,use7,use8,use9,use10) {
   //Check USE1
   if(!use1) {
