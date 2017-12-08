@@ -202,6 +202,6 @@ function makeArray(a, b, c, d, e, f, g, h) {
       }
     }
   }
-  return arr;
+  return send(arr);
   }
 }
