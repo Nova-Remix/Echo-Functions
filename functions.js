@@ -152,9 +152,9 @@ function search(arr, target) {
   }
   else if (Array.isArray(arr)) {
     if (arr.lastIndexOf(target) !== -1) {
-      return send('True');
+      return 'true';
     } else {
-      return send('False');
+      return 'false';
     }
   } else {
     send("This is not an array!");
