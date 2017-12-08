@@ -125,5 +125,5 @@ function search(array,find) {
   if(!array) return send("You need to provide an array for me to search!");
   if(!find) return send("You need to provide a keyword for me to search for!");
   if(!array.constructor === Array) return send("The variable you have provided is **NOT** an array.");
-  return search.indexOf(find) > -1
+  return array.indexOf(find) > -1
 }
