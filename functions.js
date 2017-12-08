@@ -8,6 +8,12 @@ function send(text) {
 
 
 
+
+
+
+
+
+
 /*========================================================
 EMBED
 ========================================================*/
@@ -87,6 +93,12 @@ function embed(title, description, name, value, color) {
 
 
 
+
+
+
+
+
+
 /*=========================
 RANDOM NUMBER
 =========================*/
@@ -94,6 +106,12 @@ function rNum(min, max) {
   if(!min || !max) return send("You need to set up a **minimum** number and a **maximum** number");
   return Math.floor(Math.random() * (max - min) + min);
 }
+
+
+
+
+
+
 
 
 
@@ -126,6 +144,12 @@ function userRoles(id) {
 
 
 
+
+
+
+
+
+
 /*=======================
 STRING
 =======================*/
@@ -133,6 +157,12 @@ function string(what) {
   if(!what) return send("I can't **string()** something that's not there!");
   return JSON.stringify(what);
 }
+
+
+
+
+
+
 
 
 
@@ -146,6 +176,12 @@ function parse(what) {
 
 
 
+
+
+
+
+
+
 /*====================
 PARSEINT
 ====================*/
@@ -153,6 +189,12 @@ function int(what) {
   if(!what) return send("I can't **int()** something that's not there!");
   return parseInt(what);
 }
+
+
+
+
+
+
 
 
 
@@ -176,6 +218,12 @@ function search(arr, target) {
     send("This is not an array!");
   }
 }
+
+
+
+
+
+
 
 
 
