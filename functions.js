@@ -161,40 +161,40 @@ function search(arr, target) {
   }
 }
 
-function makeArray(a, b, c, d, e, f, g, h) {
-  if(!a) {
+function makeArray(use1, use2, use3, use4, use5, use6, use7, use8) {
+  if(!use1) {
     return send("You have tried to create an empty array! Not good!");
   } else {
-  var arr = [];
-  arr.push(a);
-  if(!b) 
+    var arr = new Array;
+    arr.push(use1);
+    if(!use2) 
     //Do nothing
   } else {
-    arr.push(b);
-    if(!c) {
+    arr.push(use2);
+    if(!use3) {
       //Do nothing
     } else {
-      arr.push(c);
-      if(!d) {
+      arr.push(use3);
+      if(!use4) {
         //Do nothing
       } else {
-        arr.push(d);
-        if(!e) {
+        arr.push(use4);
+        if(!use5) {
           //Do nothing
         } else {
-          arr.push(e);
-          if(!f) {
+          arr.push(use5);
+          if(!use6) {
             //Do nothing
           } else {
-            arr.push(f);
-            if(!g) {
+            arr.push(use6);
+            if(!use7) {
               //Do nothing
             } else {
-              arr.push(g);
-              if(!h) {
+              arr.push(use7);
+              if(!use8) {
                 //Do nothing
               } else {
-                arr.push(h);
+                arr.push(use8);
               }
             }
           }
