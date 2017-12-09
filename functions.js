@@ -17,6 +17,15 @@ function send(text) {
 /*========================================================
 EMBED
 ========================================================*/
+
+
+
+
+
+
+
+
+
 function embed(title, description, name, value, color) {
   var resp = {};
   var fields = new Array();
@@ -102,6 +111,15 @@ function embed(title, description, name, value, color) {
 /*=========================
 RANDOM NUMBER
 =========================*/
+
+
+
+
+
+
+
+
+
 function rNum(min, max) {
   if(!min || !max) return send("You need to set up a **minimum** number and a **maximum** number");
   return Math.floor(Math.random() * (max - min) + min);
@@ -118,6 +136,15 @@ function rNum(min, max) {
 /*========================
 USER ROLES
 ========================*/
+
+
+
+
+
+
+
+
+
 function userRoles(id) {
   var letters = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l","M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"];
   if(!id) return send("Error! You must have a UserID for \`userRoles\`! \`\`\`js\nuserRoles(id)\`\`\`");
@@ -153,6 +180,15 @@ function userRoles(id) {
 /*=======================
 STRING
 =======================*/
+
+
+
+
+
+
+
+
+
 function string(what) {
   if(!what) return send("I can't **string()** something that's not there!");
   return JSON.stringify(what);
@@ -169,6 +205,15 @@ function string(what) {
 /*======================
 PARSE
 ======================*/
+
+
+
+
+
+
+
+
+
 function parse(what) {
   if(!what) return send("I can't **parse()** something that's not there!");
   return JSON.parse(what);
@@ -185,6 +230,15 @@ function parse(what) {
 /*====================
 PARSEINT
 ====================*/
+
+
+
+
+
+
+
+
+
 function int(what) {
   if(!what) return send("I can't **int()** something that's not there!");
   return parseInt(what);
@@ -201,6 +255,15 @@ function int(what) {
 /*==============================
 SEARCH ARRAYS
 ==============================*/
+
+
+
+
+
+
+
+
+
 function search(arr, target) {
   if (!arr) {
     return send("Where tf is your damn variable?");
@@ -230,6 +293,15 @@ function search(arr, target) {
 /*========================================================================
 MAKE ARRAYS
 ========================================================================*/
+
+
+
+
+
+
+
+
+
 function makeArray(use1,use2,use3,use4,use5,use6,use7,use8,use9,use10) {
   //Check USE1
   if(!use1) {
