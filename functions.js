@@ -273,7 +273,7 @@ SEARCH ARRAYS
 
 
 
-function search(arr, target) {
+function searchArray(arr, target) {
   if (!arr) {
     return send("Where tf is your damn variable?");
   }
@@ -373,5 +373,53 @@ function makeArray(use1,use2,use3,use4,use5,use6,use7,use8,use9,use10) {
   } else {
     arr.push(use10);
     return arr;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*========================================================================
+MAKE BITWISE
+========================================================================*/
+
+
+
+
+
+
+
+
+
+function makeBitwise(perm1) {
+  if(!perm1) {
+    send("You need to add in the permission name to grab the bitwise number of!");
+  } else {
+    var perms = {
+      "ADMINISTRATOR": "8",
+      "VIEW_AUDIT_LOG": "80",
+      "MANAGE_SERVER": "20",
+      "MANAGE_ROLES": "10000000",
+      "MANAGE_CHANNELS": "10",
+      "KICK_MEMBERS": "2",
+      "BAN_MEMBERS": "4",
+      "CREATE_INSTANT_INVITE": "1",
+      "CHANGE_NICKNAME": "4000000"
+    };
+    
+    if(perm1.indexOf(" ") > -1) {
+      perm1 = perm1.replace(" ", "_");
+    }
+    
+    if(perms[perm1.toUpperCase()]) {
+      return send(perms[perm1.toUpperCase()]);
+    } else {
+      return send("Sorry, but **" + perm1 + "** isn't valid yet.");
+    }
   }
 }
