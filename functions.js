@@ -499,7 +499,7 @@ function unBitwise(perm1, perm2, perm3) {
     send("You need to add in the permission name to grab the bitwise number of!");
   } else {
     if(perms[perm1]) {
-      var x = perms[perm1]);
+      var x = perms[perm1];
     } else {
       return send("Sorry, but **" + perm1 + "** isn't valid yet.");
     }
