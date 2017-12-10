@@ -463,11 +463,8 @@ UN BITWISE
 
 
 
-function unBitwise(perm1) {
-  if(!perm1) {
-    send("You need to add in the permission name to grab the bitwise number of!");
-  } else {
-    var perms = {
+function unBitwise(perm1, perm2, perm3) {
+      var perms = {
       "0x00000001":"CREATE_INSTANT_INVITE",
       "0x00000002":"KICK_MEMBERS",
       "0x00000004":"BAN_MEMBERS",
@@ -497,11 +494,35 @@ function unBitwise(perm1) {
       "0x20000000":"MANAGE_WEBHOOKS",
       "0x40000000":"MANAGE_EMOJIS"
     }
-    
+      
+  if(!perm1) {
+    send("You need to add in the permission name to grab the bitwise number of!");
+  } else {
     if(perms[perm1]) {
-      return send(perms[perm1]);
+      var x = perms[perm1]);
     } else {
       return send("Sorry, but **" + perm1 + "** isn't valid yet.");
+    }
+  }
+  
+  if(!perm2) {
+    send(x);
+  } else {
+    if(perms[perm2]) {
+      x = x + ", " + perms[perm2];
+    } else {
+      return send("Sorry, but **" + perm2 + "** isn't valid yet.");
+    }
+  }
+  
+  if(!perm3) {
+    send(x);
+  } else {
+    if(perms[perm3]) {
+      x = x + ", " + perms[perm3];
+      send(x);
+    } else {
+      return send("Sorry, but **" + perm3 + "** isn't valid yet.");
     }
   }
 }
