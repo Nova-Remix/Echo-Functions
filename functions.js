@@ -543,9 +543,10 @@ function findCos(adj, hypo) {
   if(!hypo) return sens("You're missing the **Hypotenuse**!");
   if(parse(adj) >= parse(hypo)) return ("The Hypotenuse must be greater than the Adjacent Length.");
   var solvefor = parse(adj) / parse(hypo);
-  var usesplit = solvefor.split(".")[1];
-  if(solvefor.indexOf(".") > -1 && usesplit.length > 2) {
-    var answer = solvefor.split(".")[0] + "." + solvefor.split(".")[1].slice(0, -(parse(usesplit.length) - 2));
+  if(solvefor.indexOf(".") > -1 && solvefor.split(".")[1].length > 2) {
+    var usesplit = solvefor.split(".")[1];
+    var solvelength = parse(usesplit.length) - 2;
+    var answer = solvefor.split(".")[0] + "." + solvefor.split(".")[1].slice(0, solvelength);
   } else {
     var answer = solvefor;
   }
