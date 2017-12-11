@@ -540,7 +540,7 @@ FIND COSINE
 =============================*/
 function findCos(adj, hypo) {
   if(!adj) return send("You're missing the **Adjacent Side Length** and the **Hypotenuse!**\n**findCos(adjacent, hypotenuse)**");
-  if(!hyop) return sens("You're missing the **Hypotenuse**!");
+  if(!hypo) return sens("You're missing the **Hypotenuse**!");
   if(parse(adj) >= parse(hypo)) return ("The Hypotenuse must be greater than the Adjacent Length.");
   var solvefor = parse(adj) / parse(hypo);
   send("Cosine is **" + solvefor + "**");
