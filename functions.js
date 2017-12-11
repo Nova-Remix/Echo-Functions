@@ -547,7 +547,7 @@ function findCos(adj, hypo) {
     if(string(solvefor).split(".")[1].length > 2) {
       var usesplit = string(solvefor).split(".")[1];
       var solvelength = parse(usesplit.length) - 2;
-      var answer = string(solvefor).split(".")[0] + "." + usesplit.slice(0, solvelength);
+      var answer = string(solvefor).split(".")[0] + "." + usesplit.slice(0, -solvelength);
     } else {
       var answer = solvefor;
     }
