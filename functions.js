@@ -438,7 +438,7 @@ function makeBitwise(perm1) {
     if(perms[perm1.toUpperCase()]) {
       return send(perms[perm1.toUpperCase()]);
     } else {
-      return send("Sorry, but **" + perm1 + "** isn't valid yet.");
+      return send("Sorry, but **" + perm1.toUpperCase() + "** isn't valid yet.");
     }
   }
 }
