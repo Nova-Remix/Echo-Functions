@@ -432,7 +432,7 @@ function makeBitwise(perm1) {
     }
     
     if(perm1.indexOf(" ") > -1) {
-      perm1 = perm1.replace(" ", "_");
+      perm1 = perm1.replace(/ /g, "_");
     }
     
     if(perms[perm1.toUpperCase()]) {
