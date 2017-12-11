@@ -543,5 +543,11 @@ function findCos(adj, hypo) {
   if(!hypo) return sens("You're missing the **Hypotenuse**!");
   if(parse(adj) >= parse(hypo)) return ("The Hypotenuse must be greater than the Adjacent Length.");
   var solvefor = parse(adj) / parse(hypo);
-  send("Cosine is **" + Math.round(solvefor) + "**");
+  var usesplit = solvefor.split(".")[1];
+  if(solvefor.indexOf(".") > -1 && usesplit.length > 2) {
+    var answer = solvefor.split(".")[0] + "." + solvefor.split(".")[1].slice(0, -(usesplit.length - 2));
+  } else {
+    var answer = solvefor;
+  }
+  send("Cosine is **" + answer + "**");
 }
