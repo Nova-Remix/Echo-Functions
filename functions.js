@@ -853,3 +853,40 @@ function unBitwise(count, type) {
         return "Error : "+count+"is not a valid number";
     }
 }
+
+
+
+
+
+
+
+
+/*========================
+SERVER CHANNELS (ID, NAME)
+=======================*/
+
+
+
+
+
+
+
+
+
+function serverChannels(type) {
+  if(!type || type.toLowerCase() === "name" || type.toLowerCase() === "names") {
+    var channels = new Array();
+    for (var x = 0; x < ServerChannels.length; x++) {
+      channels.push(ServerChannels[x].Name);
+    }
+    return channels;
+  } else if (type.toLowerCase() === "id") {
+    var channels = new Array();
+    for (var x = 0; x < ServerChannels.length; x++) {
+      channels.push(ServerChannels[x].id);
+    }
+    return channels;
+  } else {
+    return send("Sorry! You can only have `Name` or `ID` for the type to collect!");
+  }
+}
