@@ -880,10 +880,10 @@ function serverChannels(type) {
       channels.push(ServerChannels[x].Name);
     }
     return channels;
-  } else if (type.toLowerCase() === "id") {
+  } else if (type.toLowerCase() === "id" || type.toLowerCase() === "ids") {
     var channels = new Array();
     for (var x = 0; x < ServerChannels.length; x++) {
-      channels.push(ServerChannels[x].id);
+      channels.push(ServerChannels[x].ID);
     }
     return channels;
   } else {
