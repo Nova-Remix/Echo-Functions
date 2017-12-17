@@ -5,15 +5,6 @@ function send(text) {
   if(!text) return resp = "I can't send an empty message! Please examine the **send()** function carefully.";
   return resp = text;
 }
-
-
-
-
-
-
-
-
-
 /*========================================================
 EMBED
 ========================================================*/
@@ -90,15 +81,6 @@ function embed(title, description, name, value, color) {
   }
   return resp;
 }
-
-
-
-
-
-
-
-
-
 /*=========================
 RANDOM NUMBER
 =========================*/
@@ -106,15 +88,6 @@ function rNum(min, max) {
   if(!min || !max) return send("You need to set up a **minimum** number and a **maximum** number");
   return Math.floor(Math.random() * (max - min) + min);
 }
-
-
-
-
-
-
-
-
-
 /*========================
 USER ROLES
 ========================*/
@@ -141,15 +114,6 @@ function userRoles(id) {
   }
   return myroles;
 }
-
-
-
-
-
-
-
-
-
 /*=======================
 STRING
 =======================*/
@@ -157,15 +121,6 @@ function string(what) {
   if(!what) return send("I can't **string()** something that's not there!");
   return JSON.stringify(what);
 }
-
-
-
-
-
-
-
-
-
 /*======================
 PARSE
 ======================*/
@@ -173,15 +128,6 @@ function parse(what) {
   if(!what) return send("I can't **parse()** something that's not there!");
   return JSON.parse(what);
 }
-
-
-
-
-
-
-
-
-
 /*====================
 PARSEINT
 ====================*/
@@ -189,15 +135,6 @@ function int(what) {
   if(!what) return send("I can't **int()** something that's not there!");
   return parseInt(what);
 }
-
-
-
-
-
-
-
-
-
 /*==============================
 SEARCH ARRAYS
 ==============================*/
@@ -218,15 +155,6 @@ function searchArray(arr, target) {
     send("This is not an array!");
   }
 }
-
-
-
-
-
-
-
-
-
 /*========================================================================
 MAKE ARRAYS
 ========================================================================*/
@@ -294,15 +222,6 @@ function makeArray(use1,use2,use3,use4,use5,use6,use7,use8,use9,use10) {
     return arr;
   }
 }
-
-
-
-
-
-
-
-
-
 /*========================================================================
 MAKE BITWISE
 ========================================================================*/
@@ -352,18 +271,9 @@ function makeBitwise(perm1) {
     }
   }
 }
-
-
-
-
-
-
-
-
-
 /*========================================================================
 UN BITWISE
-========================================================================*/
+=========================================*/
 function unBitwise(perm1, perm2, perm3) {
       var perms = {
       "0x00000001":"CREATE_INSTANT_INVITE",
@@ -433,12 +343,6 @@ function unBitwise(perm1, perm2, perm3) {
 
 
 
-
-
-
-/*=============================
-FIND COSINE
-=============================*/
 function unBitwise(count, type) {
     var type = (typeof type !== 'undefined') ?  type : 0;
     var count = parseInt(count);
@@ -746,14 +650,6 @@ function unBitwise(count, type) {
         return "Error : " + count + "is not a valid number";
     }
 }
-
-
-
-
-
-
-
-
 /*========================
 SERVER CHANNELS (ID, NAME)
 =======================*/
@@ -774,20 +670,17 @@ function serverChannels(type) {
     return send("Sorry! You can only have `Name` or `ID` for the type to collect!");
   }
 }
-
-
-
-
-
-
-
-
-
-/*==
+/*============================
 PM USER
-==*/
+============================*/
 function pm(user, message) {
   if(!user) return send("Sorry! You must use the user's ID that you want me to PM!");
   if(!message) return send("I can't DM someone and empty message! Pease check the message you want me to DM again!")
   return send("{pm:" + user + "} " + message);
+}
+/*============
+ASS PHOTOS
+============*/
+function ass() {
+  return send("{ass}")
 }
