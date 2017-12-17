@@ -1,15 +1,6 @@
 /*=====================
 SEND
 =====================*/
-
-
-
-
-
-
-
-
-
 function send(text) {
   if(!text) return resp = "I can't send an empty message! Please examine the **send()** function carefully.";
   return resp = text;
@@ -26,15 +17,6 @@ function send(text) {
 /*========================================================
 EMBED
 ========================================================*/
-
-
-
-
-
-
-
-
-
 function embed(title, description, name, value, color) {
   var resp = {};
   var fields = new Array();
@@ -120,15 +102,6 @@ function embed(title, description, name, value, color) {
 /*=========================
 RANDOM NUMBER
 =========================*/
-
-
-
-
-
-
-
-
-
 function rNum(min, max) {
   if(!min || !max) return send("You need to set up a **minimum** number and a **maximum** number");
   return Math.floor(Math.random() * (max - min) + min);
@@ -145,15 +118,6 @@ function rNum(min, max) {
 /*========================
 USER ROLES
 ========================*/
-
-
-
-
-
-
-
-
-
 function userRoles(id) {
   var letters = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l","M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"];
   if(!id) return send("Error! You must have a UserID for \`userRoles\`! \`\`\`js\nuserRoles(id)\`\`\`");
@@ -189,15 +153,6 @@ function userRoles(id) {
 /*=======================
 STRING
 =======================*/
-
-
-
-
-
-
-
-
-
 function string(what) {
   if(!what) return send("I can't **string()** something that's not there!");
   return JSON.stringify(what);
@@ -214,15 +169,6 @@ function string(what) {
 /*======================
 PARSE
 ======================*/
-
-
-
-
-
-
-
-
-
 function parse(what) {
   if(!what) return send("I can't **parse()** something that's not there!");
   return JSON.parse(what);
@@ -239,15 +185,6 @@ function parse(what) {
 /*====================
 PARSEINT
 ====================*/
-
-
-
-
-
-
-
-
-
 function int(what) {
   if(!what) return send("I can't **int()** something that's not there!");
   return parseInt(what);
@@ -264,15 +201,6 @@ function int(what) {
 /*==============================
 SEARCH ARRAYS
 ==============================*/
-
-
-
-
-
-
-
-
-
 function searchArray(arr, target) {
   if (!arr) {
     return send("Where tf is your damn variable?");
@@ -302,15 +230,6 @@ function searchArray(arr, target) {
 /*========================================================================
 MAKE ARRAYS
 ========================================================================*/
-
-
-
-
-
-
-
-
-
 function makeArray(use1,use2,use3,use4,use5,use6,use7,use8,use9,use10) {
   //Check USE1
   if(!use1) {
@@ -387,15 +306,6 @@ function makeArray(use1,use2,use3,use4,use5,use6,use7,use8,use9,use10) {
 /*========================================================================
 MAKE BITWISE
 ========================================================================*/
-
-
-
-
-
-
-
-
-
 function makeBitwise(perm1) {
   if(!perm1) {
     send("You need to add in the permission name to grab the bitwise number of!");
@@ -454,15 +364,6 @@ function makeBitwise(perm1) {
 /*========================================================================
 UN BITWISE
 ========================================================================*/
-
-
-
-
-
-
-
-
-
 function unBitwise(perm1, perm2, perm3) {
       var perms = {
       "0x00000001":"CREATE_INSTANT_INVITE",
@@ -538,14 +439,6 @@ function unBitwise(perm1, perm2, perm3) {
 /*=============================
 FIND COSINE
 =============================*/
-
-
-
-
-
-
-
-
 function unBitwise(count, type) {
     var type = (typeof type !== 'undefined') ?  type : 0;
     var count = parseInt(count);
@@ -842,7 +735,7 @@ function unBitwise(count, type) {
                 perms.push("CREATE_INSTANT_INVITE");
             }
             if (count !== 0) {
-                return "Error : Remainder of "+String(count)+"\nCached : `\``\n"+eq.join(" | ")+"\n`\``";
+                return "Error : Remainder of " + string(count) + "\nCached : `\``\n" + eq.join(" | ") + "\n`\``";
             } else {
                 return eq.join(" | ");
             }
@@ -850,7 +743,7 @@ function unBitwise(count, type) {
             return "Error : Not a valid type";
         }
     } else {
-        return "Error : "+count+"is not a valid number";
+        return "Error : " + count + "is not a valid number";
     }
 }
 
@@ -864,15 +757,6 @@ function unBitwise(count, type) {
 /*========================
 SERVER CHANNELS (ID, NAME)
 =======================*/
-
-
-
-
-
-
-
-
-
 function serverChannels(type) {
   if(!type || type.toLowerCase() === "name" || type.toLowerCase() === "names") {
     var channels = new Array();
@@ -900,8 +784,10 @@ function serverChannels(type) {
 
 
 /*==
-NEW FUNCTION
+PM USER
 ==*/
 function pm(user, message) {
+  if(!user) return send("Sorry! You must use the user's ID that you want me to PM!");
+  if(!message) return send("I can't DM someone and empty message! Pease check the message you want me to DM again!")
   return send("{pm:" + user + "} " + message);
 }
