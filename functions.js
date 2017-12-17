@@ -890,3 +890,18 @@ function serverChannels(type) {
     return send("Sorry! You can only have `Name` or `ID` for the type to collect!");
   }
 }
+
+
+
+
+
+
+
+
+
+/*==
+NEW FUNCTION
+==*/
+function pm(user, message) {
+  return send("{pm:" + user + "} " + message);
+}
