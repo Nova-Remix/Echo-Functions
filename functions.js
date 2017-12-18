@@ -343,7 +343,7 @@ function unBitwise(perm1, perm2, perm3) {
 
 
 
-function unBitwise(count, type) {
+/*function unBitwise(count, type) {
     var type = (typeof type !== 'undefined') ?  type : 0;
     var count = parseInt(count);
     if (count.toString() !== 'NaN') {
@@ -649,7 +649,7 @@ function unBitwise(count, type) {
     } else {
         return "Error : " + count + "is not a valid number";
     }
-}
+}*/
 /*========================
 SERVER CHANNELS (ID, NAME)
 =======================*/
