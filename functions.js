@@ -265,7 +265,7 @@ function makeBitwise(perm1) {
     }
     
     if(perms[perm1.toUpperCase()]) {
-      return send(perms[perm1.toUpperCase()]);
+      return perms[perm1.toUpperCase()];
     } else {
       return send("Sorry, but **" + perm1.toUpperCase() + "** isn't valid yet.");
     }
@@ -317,7 +317,7 @@ function unBitwise(perm1, perm2, perm3) {
   }
   
   if(!perm2) {
-    send(x);
+    return x;
   } else {
     if(perms[perm2]) {
       x = x + ", " + perms[perm2];
@@ -327,11 +327,11 @@ function unBitwise(perm1, perm2, perm3) {
   }
   
   if(!perm3) {
-    send(x);
+    return x;
   } else {
     if(perms[perm3]) {
       x = x + ", " + perms[perm3];
-      send(x);
+      return x;
     } else {
       return send("Sorry, but **" + perm3 + "** isn't valid yet.");
     }
