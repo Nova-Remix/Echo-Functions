@@ -634,9 +634,10 @@ function getAPI(api, grab) {
       var info = grab.replace(/["/g, "");
       info = info.replace(" ", "");
       info = info.split('"]');
-     for (var e = 0; e < info.length; e++) {
-       if(!obj.hasOwnProperty(info[e])) {
-         return send("Uh oh! I ran into a problem trying to find the value **" + info[e] + "** in the JSON API! Please check your spelling and make sure this value exists!");
+      for (var e = 0; e < info.length; e++) {
+        if(!obj.hasOwnProperty(info[e])) {
+          return send("Uh oh! I ran into a problem trying to find the value **" + info[e] + "** in the JSON API! Please check your spelling and make sure this value exists!");
+        }
       }
     } catch (err) {
       send("Error found!\n```" + err + "```");
