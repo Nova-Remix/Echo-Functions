@@ -642,10 +642,10 @@ function getAPI(api, grab) {
               if(!obj.hasOwnProperty(info[e])) {
                 return send("Uh oh! I ran into a problem trying to find the value **\"" + info[e] + "\"** in the JSON API! Please check your spelling and make sure this value exists!");
               } else {
-                got = got + '["' + info[e]
-                return send(obj + grab);
+                got = got + '["' + info[e] + '"]';
               }
             }
+            if(got) return send(got);
           } catch (err) {
             return send("Error!\n```xl\n" + err + "```");
           }
