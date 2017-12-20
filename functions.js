@@ -637,13 +637,13 @@ function getAPI(api, grab) {
             var info = grab.replace('["', "");
             info = info.replace(" ", "");
             info = info.split('"]');
-            //var got = "obj";
+            var got = "obj";
             for (var e = 0; e < info.length - 1; e++) {
               if(!obj.hasOwnProperty(info[e])) {
                 return send("Uh oh! I ran into a problem trying to find the value **\"" + info[e] + "\"** in the JSON API! Please check your spelling and make sure this value exists!");
               } else {
-                //got = got + '["' + info[e]
-                return send("obj" + grab);
+                got = got + '["' + info[e]
+                return send(obj + grab);
               }
             }
           } catch (err) {
