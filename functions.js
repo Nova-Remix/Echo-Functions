@@ -635,11 +635,13 @@ function getAPI(api, grab) {
           try {
             var obj = GetJSON(api);
             var info = "";
-            for(var x = 0; x < grab.length; x++) {
+            //for(var x = 0; x < grab.length; x++) {
               info = grab.replace('["', "");
+            info = info.replace('["', "");
               info = info.replace(']["', ']');
+            info = info.replace(']["', "]");
               info = info.replace(" ", "");
-            }
+            //}
             info = info.split('"]');
             var getlength = ["Uhoh!", obj[info[0]], obj[info[0]][info[1]], obj[info[0]][info[1]][info[2]], obj[info[0]][info[1]][info[2]][info[3]], obj[info[0]][info[1]][info[2]][info[3]][info[4]]];
             for(var e = 0; e < info.length; e++) {
