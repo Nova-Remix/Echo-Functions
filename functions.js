@@ -634,7 +634,7 @@ function getAPI(api, grab) {
         } else {
           try {
             var obj = GetJSON(api);
-            var info = grab.replace('["', "");
+            var info = grab.replace(/[\"/g, "");
             info = info.replace(" ", "");
             info = info.split('"]');
             var got = "obj";
