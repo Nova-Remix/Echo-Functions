@@ -622,25 +622,35 @@ GETAPI
 function getAPI(api, grab) {
   if(!api) {
     return send("You must provide a valid link for me to grab the information from!");
-  } else if(!grab) {
-    return send("You must provide information for me to grab from the API!");
-  } else if(api.indexOf("http") === -1 && api.indexOf("www.") === -1) {
-    return send("The link must includes `https://` or `http://` as well as include `www.`!");
-  } else if(grab.indexOf('["') === -1 || grab.indexOf('"]') === -1) {
-    return send("You must follow this format to grab information from the API:\n**[\"Movies\"][\"Genres\"][\"Horror\"]**");
   } else {
-    try {
-      var obj = GetJSON(api);
-      var info = grab.replace(/["/g, "");
-      info = info.replace(" ", "");
-      info = info.split('"]');
-      for (var e = 0; e < info.length; e++) {
-        if(!obj.hasOwnProperty(info[e])) {
-          return send("Uh oh! I ran into a problem trying to find the value **" + info[e] + "** in the JSON API! Please check your spelling and make sure this value exists!");
+    if(!grab) {
+      return send("You must provide information for me to grab from the API!");
+    } else {
+      if(api.indexOf("http") === -1 && api.indexOf("www.") === -1) {
+        return send("The link must includes `https://` or `http://` as well as include `www.`!");
+      } else {
+        if(grab.indexOf('["') === -1 || grab.indexOf('"]') === -1) {
+          return send("You must follow this format to grab information from the API:\n**[\"Movies\"][\"Genres\"][\"Horror\"]**");
+        } else {
+          try {
+            var obj = GetJSON(api);
+            var info = grab.replace('["', "");
+            info = info.replace(" ", "");
+            info = info.split('"]');
+            //var got = "obj";
+            for (var e = 0; e < info.length - 1; e++) {
+              if(!obj.hasOwnProperty(info[e])) {
+                return send("Uh oh! I ran into a problem trying to find the value **\"" + info[e] + "\"** in the JSON API! Please check your spelling and make sure this value exists!");
+              } else {
+                //got = got + '["' + info[e]
+                return send("obj" + grab);
+              }
+            }
+          } catch (err) {
+            return send("Error!\n```xl\n" + err + "```");
+          }
         }
       }
-    } catch (err) {
-      send("Error found!\n```" + err + "```");
     }
   }
 }
