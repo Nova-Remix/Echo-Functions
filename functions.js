@@ -644,9 +644,9 @@ function getAPI(api, grab) {
                 var msg = getlength[e];
               }
             }
-            send(msg);
+            return msg;
           } catch (err) {
-            return send("Error!\n```xl\n" + err + "```");
+            return send("**Error!**\n```xl\n" + err + "```");
           }
         }
       }
