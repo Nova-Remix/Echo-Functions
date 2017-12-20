@@ -634,18 +634,17 @@ function getAPI(api, grab) {
         } else {
           try {
             var obj = GetJSON(api);
-            var info = grab.replace(/[\"/g, "");
+            var info = grab.replace('["', "");
+            info = info.replace(']["', ']');
             info = info.replace(" ", "");
             info = info.split('"]');
-            var got = "obj";
-            for (var e = 0; e < info.length - 1; e++) {
-              if(!obj.hasOwnProperty(info[e])) {
-                return send("Uh oh! I ran into a problem trying to find the value **\"" + info[e] + "\"** in the JSON API! Please check your spelling and make sure this value exists!");
-              } else {
-                got = got + '["' + info[e] + '"]';
+            var getlength = ["Uhoh!", obj[info[0]], obj[info[0]][info[1]], obj[info[0]][info[1]][info[2]], obj[info[0]][info[1]][info[2]][info[3]], obj[info[0]][info[1]][info[2]][info[3]][info[4]]];
+            for(var e = 0; e < info.length; e++) {
+              if(getlength[e]) {
+                var msg = getlength[e];
               }
             }
-            if(got) return send(got);
+            send(msg);
           } catch (err) {
             return send("Error!\n```xl\n" + err + "```");
           }
