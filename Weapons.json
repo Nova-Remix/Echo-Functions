@@ -1,0 +1,22 @@
+{
+  "Stick": {
+    "DMG": "1-2",
+    "Level": 1,
+    "Souls": 0
+  },
+  "Baseball Bat": {
+    "DMG": "3-5",
+    "Level": 1,
+    "Souls": 500
+  },
+  "Spear": {
+    "DMG": 10,
+    "Level": 1,
+    "Mecca": 5
+  },
+  "Trident": {
+    "DMG": "10-15",
+    "Level": 2,
+    "Souls": 1000
+  }
+}
