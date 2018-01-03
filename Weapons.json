@@ -1,4 +1,4 @@
-{
+var weaponStats = {
   "Stick": {
     "DMG": "1-2"
   },
@@ -20,4 +20,16 @@
     "Level": 2,
     "Souls": 1000
   }
-}
+};
+
+var armourStats = {
+  "None":{
+    "Protection": 0
+  },
+  "Wooden Armor":{
+    "Name":"Wooden Armor",
+    "Level": 1,
+    "Protection": 10,
+    "Souls": 500
+  }
+};
