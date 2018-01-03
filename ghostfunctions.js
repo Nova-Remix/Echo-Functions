@@ -127,7 +127,7 @@ function leveledArm(user, armour) {
     }
     
     var armAvail = [];
-    armAvail.push('Armors\n========\n');
+    armAvail.push('Level ' + user.userLevel + ' Armor\n===============\n');
 
     for (i=0; i < armObjList.length; i++) {
         if (user.userLevel >= armObjList[i].Level) {
