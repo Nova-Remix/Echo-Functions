@@ -1,11 +1,11 @@
     var weaponStats = {
         "stick": "{\"DMG\": \"1-2\"}",
-        "baseball bat": "{\"Name\": \"Baseball Bat\",\"DMG\": \"3-5\",\"Level\": 1,\"Souls\": 500}",
-        "spear": "{\"Name\": \"Spear\",\"DMG\": 10,\"Level\": 1,\"Mecca\": 5}",
-        "trident": "{\"Name\": \"Trident\",\"DMG\": \"10-15\",\"Level\": 2,\"Souls\": 1000}"
+        "baseball bat": "{\"Name\": \"baseball bat\",\"DMG\": \"3-5\",\"Level\": 1,\"Souls\": 500}",
+        "spear": "{\"Name\": \"spear\",\"DMG\": 10,\"Level\": 1,\"Mecca\": 5}",
+        "trident": "{\"Name\": \"trident\",\"DMG\": \"10-15\",\"Level\": 2,\"Souls\": 1000}"
     };
 
     var armourStats = {
         "none":"{\"Protection\": 0}",
-        "wooden armor":"{\"Name\":\"Wooden Armor\",\"Level\": 1,\"Protection\": 10,\"Souls\": 500}"
+        "wooden armor":"{\"Name\":\"wooden armor\",\"Level\": 1,\"Protection\": 10,\"Souls\": 500}"
     };
