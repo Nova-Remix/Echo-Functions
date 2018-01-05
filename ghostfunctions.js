@@ -290,3 +290,11 @@ function viewShop(user, weapon, armour) {
         return "Nothing is available! Sorry!"
     }
 }
+
+
+function ghost(userhealth, userlevel) {
+  var level = user.userLevel + 1;
+  var health = user.userHealth / 20;
+  var msg = "You found a level **" + level + "** ghost with **" + health + "** health! Be careful!";
+  return msg;
+}
