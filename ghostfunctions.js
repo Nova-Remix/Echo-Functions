@@ -296,20 +296,36 @@ function viewShop(user, weapon, armour) {
     }
 }
 
-
-function ghost(userhealth, userlevel) {
-  var level = userlevel + 1;
-  var health = userhealth / 4;
-  Player[RawUserID + "-Ghost"] = health;
-  var msg = "You found a level **" + level + "** ghost with **" + health + "** health!";
-  return msg;
+function ghost() {
+  var ghigh = user.userHealth / 4;
+  var glow = user.userHealth / 10
+  var ghost = {
+    "Health": rNum(glow, ghigh),
+    "Damage": rNum(glow, ghigh)
+  }
+  Player[RawUserID + "-Ghost"] = string(ghost);
 }
 
-function levelup(level) {
-  var user = JSON.parse(Player[RawUserID]);
-  user.userLevel = level;
-  user.userHealth = user.userHealth + 15;
-  user.userXP = 0;
-  
-  return send("You have just leveled up!");
+function newGhost() {
+  var newghost = {
+    "Health": parse(ghost.Health) - parse(dmg),
+    "Damage": parse(ghost.Damage)
+  }
+
+  Player[RawUserID + "-Ghost"] = string(newghost);
+}
+
+function checkHealth() {
+  if(ghost.Health <= 0) {
+    delete Player[RawUserID + "-Ghost"];
+    msg += "\n\nX_X\n====\nYou killed the ghost! You have earned " + 500 + " XP";
+    user.userXP = user.userXP + 500;
+  }
+}
+
+function checkXP() {
+  if(user.userXP >= Math.floor((user.userLevel * 100) / 0.04)) {
+    user.userLevel = user.userLevel + 1;
+    msg += "\n\nYou just leveled up!";
+  }
 }
