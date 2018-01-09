@@ -299,3 +299,10 @@ function ghost(userhealth, userlevel) {
   var msg = "You found a level **" + level + "** ghost with **" + health + "** health!";
   return msg;
 }
+
+function levelup(level) {
+  var user = JSON.parse(Player[RawUserID]);
+  user.userLevel = level;
+  user.userHealth = user.userHealth + 15;
+  user.userXP = 0;
+}
