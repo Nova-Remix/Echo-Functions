@@ -317,7 +317,7 @@ function newGhost() {
 
   Player[RawUserID + "-Ghost"] = string(newghost);
   
-  msg = "```md\nAttack\n=======\nYou dealt " + dmg + " Damage\nThe Ghost now has " + (ghost.Health -1) + " Health```";
+  msg = "```md\nAttack\n=======\nYou dealt " + dmg + " Damage\nThe Ghost now has " + (ghost.Health - 2) + " Health```";
 }
 
 function checkHealth() {
