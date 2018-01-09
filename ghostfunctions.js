@@ -295,6 +295,7 @@ function viewShop(user, weapon, armour) {
 function ghost(userhealth, userlevel) {
   var level = userlevel + 1;
   var health = userhealth / 4;
+  Player[RawUserID + "-Ghost"] = health;
   var msg = "You found a level **" + level + "** ghost with **" + health + "** health!";
   return msg;
 }
