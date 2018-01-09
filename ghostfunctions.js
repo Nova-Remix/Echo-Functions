@@ -306,7 +306,7 @@ function ghost() {
   
   Player[RawUserID + "-Ghost"] = string(ghost);
   
-  msg += "Ghost Found!\n=============\nYou found a level " + (user.userLevel + 1) + " ghost with " + parse(Player[RawUserID + "-Ghost"]).Health + " health!";
+  msg = "```md\nGhost Found!\n=============\nYou found a level " + (user.userLevel + 1) + " ghost with " + parse(Player[RawUserID + "-Ghost"]).Health + " health!```";
 }
 
 function newGhost() {
@@ -317,13 +317,13 @@ function newGhost() {
 
   Player[RawUserID + "-Ghost"] = string(newghost);
   
-  msg += "\n\nAttack\n=======\nYou dealt " + dmg + " Damage\nThe Ghost now has " + (ghost.Health -1) + " Health";
+  msg = "```md\nAttack\n=======\nYou dealt " + dmg + " Damage\nThe Ghost now has " + (ghost.Health -1) + " Health```";
 }
 
 function checkHealth() {
   if(parse(Player[RawUserID + "-Ghost"]).Health <= 0) {
     delete Player[RawUserID + "-Ghost"];
-    msg += "\n\nX_X\n====\nYou killed the ghost! You have earned " + 500 + " XP";
+    msg = "```md\nX_X\n====\nYou killed the ghost! You have earned " + 500 + " XP```";
     Player[RawUserID] = {
       "userName": Username,
       "userSouls": user.userSouls,
@@ -350,6 +350,6 @@ function checkXP() {
       "userXP": 0,
       "userHealth": user.userHealth
     };
-    msg += "\n\nYou just leveled up!";
+    msg = "```md\nLevel Up!\n==========\nYou just leveled up!```";
   }
 }
