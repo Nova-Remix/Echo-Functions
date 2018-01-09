@@ -324,7 +324,7 @@ function checkHealth() {
   if(parse(Player[RawUserID + "-Ghost"]).Health <= 0) {
     delete Player[RawUserID + "-Ghost"];
     msg = "```md\nX_X\n====\nYou killed the ghost! You have earned " + 500 + " XP```";
-    Player[RawUserID] = {
+    var x = {
       "userName": Username,
       "userSouls": user.userSouls,
       "userMecca": user.userMecca,
@@ -334,13 +334,13 @@ function checkHealth() {
       "userXP": user.userXP + 500,
       "userHealth": user.userHealth
     };
-
+    Player[RawUserID] = string(x);
   }
 }
 
 function checkXP() {
   if(user.userXP >= Math.floor((user.userLevel * 100) / 0.04)) {
-    Player[RawUserID] = {
+    var y = {
       "userName": Username,
       "userSouls": user.userSouls,
       "userMecca": user.userMecca,
@@ -350,6 +350,8 @@ function checkXP() {
       "userXP": 0,
       "userHealth": user.userHealth
     };
+    
+    Player[RawUserID] = string(y);
     msg = "```md\nLevel Up!\n==========\nYou just leveled up!```";
   }
 }
