@@ -318,7 +318,7 @@ function newGhost() {
 }
 
 function checkHealth() {
-  if(ghost.Health <= 0) {
+  if(parse(Player[RawUserID]).Health <= 0) {
     delete Player[RawUserID + "-Ghost"];
     msg += "\n\nX_X\n====\nYou killed the ghost! You have earned " + 500 + " XP";
     user.userXP = user.userXP + 500;
