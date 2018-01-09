@@ -302,10 +302,11 @@ function ghost() {
   var ghost = {
     "Health": rNum(glow, ghigh),
     "Damage": rNum(glow, ghigh)
-  }
+  };
+  
   Player[RawUserID + "-Ghost"] = string(ghost);
   
-  msg += "Ghost Found!\n=============\nYou found a level " + (user.userLevel + 1) + " ghost with " + parse(Player[RawUserID]).Health + " health!";
+  msg += "Ghost Found!\n=============\nYou found a level " + (user.userLevel + 1) + " ghost with " + parse(Player[RawUserID + "-Ghost"]).Health + " health!";
 }
 
 function newGhost() {
