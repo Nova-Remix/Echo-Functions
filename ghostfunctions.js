@@ -316,13 +316,25 @@ function newGhost() {
   }
 
   Player[RawUserID + "-Ghost"] = string(newghost);
+  
+  msg += "\n\nAttack\n=======\nYou dealt " + dmg + " Damage\nThe Ghost now has " + (ghost.Health -1) + " Health";
 }
 
 function checkHealth() {
   if(parse(Player[RawUserID + "-Ghost"]).Health <= 0) {
     delete Player[RawUserID + "-Ghost"];
     msg += "\n\nX_X\n====\nYou killed the ghost! You have earned " + 500 + " XP";
-    user.userXP = user.userXP + 500;
+    Player[RawUserID] = {
+      "userName": Username,
+      "userSouls": user.userSouls,
+      "userMecca": user.userMecca,
+      "userWeapon": user.userWeapon,
+      "userArmor": user.userArmor,
+      "userLevel": user.userLevel,
+      "userXP": user.userXP + 500,
+      "userHealth": user.userHealth
+    };
+
   }
 }
 
