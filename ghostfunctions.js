@@ -305,4 +305,6 @@ function levelup(level) {
   user.userLevel = level;
   user.userHealth = user.userHealth + 15;
   user.userXP = 0;
+  
+  return send("You have just leveled up!");
 }
