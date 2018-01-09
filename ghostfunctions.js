@@ -327,7 +327,16 @@ function checkHealth() {
 
 function checkXP() {
   if(user.userXP >= Math.floor((user.userLevel * 100) / 0.04)) {
-    user.userLevel = user.userLevel + 1;
+    Player[RawUserID] = {
+      "userName": Username,
+      "userSouls": user.userSouls,
+      "userMecca": user.userMecca,
+      "userWeapon": user.userWeapon,
+      "userArmor": user.userArmor,
+      "userLevel": user.userLevel + 1,
+      "userXP": 0,
+      "userHealth": user.userHealth
+    };
     msg += "\n\nYou just leveled up!";
   }
 }
