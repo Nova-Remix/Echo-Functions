@@ -353,7 +353,7 @@ function checkXP() {
         "userHealth": user.userHealth + 100
       };
       Player[RawUserID] = string(y);
-      msg = "```md\nLevel Up!\n==========\nYou just leveled up!```";
+      msg += "```md\nLevel Up!\n==========\nYou just leveled up!```";
     }
   }
 }
