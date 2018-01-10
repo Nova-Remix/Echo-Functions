@@ -11,7 +11,7 @@ function string(what) {
 }
 
 function rNum(min, max) {
-  if(!min || !max) return send("You need to set up a **minimum** number and a **maximum** number");
+  if(!max) return send("You need to set up a **minimum** number and a **maximum** number");
   return Math.floor(Math.random() * (max - min) + min);
 }
 
