@@ -369,7 +369,7 @@ function addRewards() {
       "userWeapon": user.userWeapon,
       "userArmor": user.userArmor,
       "userLevel": user.userLevel,
-      "userXP": user.userXP,
+      "userXP": user.userXP + 500,
       "userHealth": user.userHealth
     };
     Player[RawUserID] = string(x);
@@ -383,7 +383,7 @@ function addRewards() {
       "userWeapon": user.userWeapon,
       "userArmor": user.userArmor,
       "userLevel": user.userLevel,
-      "userXP": user.userXP,
+      "userXP": user.userXP + 500,
       "userHealth": user.userHealth
     };
     Player[RawUserID] = string(x);
