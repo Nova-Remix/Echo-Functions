@@ -324,7 +324,8 @@ function checkHealth() {
   if(parse(ghost.Health <= 0)) {
     delete Player[RawUserID + "-Ghost"];
     msg = "```md\nX_X\n====\nYou killed the ghost! You have earned " + 500 + " XP```";
-    var x = {
+    addRewards();
+    var m = {
       "userName": Username,
       "userSouls": user.userSouls,
       "userMecca": user.userMecca,
@@ -334,7 +335,7 @@ function checkHealth() {
       "userXP": user.userXP + 500,
       "userHealth": user.userHealth
     };
-    Player[RawUserID] = string(x);
+    Player[RawUserID] = string(m);
   }
 }
 
@@ -348,10 +349,43 @@ function checkXP() {
       "userArmor": user.userArmor,
       "userLevel": user.userLevel + 1,
       "userXP": 0,
-      "userHealth": user.userHealth
+      "userHealth": user.userHealth + 100
     };
     
     Player[RawUserID] = string(y);
     msg = "```md\nLevel Up!\n==========\nYou just leveled up!```";
+  }
+}
+
+function addRewards() {
+  msg += "```md\nRewards\n========\n";
+  if(rNum(1, 20) >= 19) {
+    var addMecca = rNum(0, 5);
+    msg += "You have gained " + addMecca + " Mecca!```";
+    var x = {
+      "userName": Username,
+      "userSouls": user.userSouls,
+      "userMecca": user.userMecca + addMecca,
+      "userWeapon": user.userWeapon,
+      "userArmor": user.userArmor,
+      "userLevel": user.userLevel,
+      "userXP": user.userXP,
+      "userHealth": user.userHealth
+    };
+    Player[RawUserID] = string(x);
+  } else {
+    var addSouls = rNum(50, 200);
+    msg += "You have gained " + addSouls + " Souls!```";
+    var x = {
+      "userName": Username,
+      "userSouls": user.userSouls + addSouls,
+      "userMecca": user.userMecca,
+      "userWeapon": user.userWeapon,
+      "userArmor": user.userArmor,
+      "userLevel": user.userLevel,
+      "userXP": user.userXP,
+      "userHealth": user.userHealth
+    };
+    Player[RawUserID] = string(x);
   }
 }
