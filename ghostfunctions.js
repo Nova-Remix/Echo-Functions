@@ -340,20 +340,21 @@ function checkHealth() {
 }
 
 function checkXP() {
-  if(user.userXP >= Math.floor((user.userLevel * 100) / 0.04)) {
-    var y = {
-      "userName": Username,
-      "userSouls": user.userSouls,
-      "userMecca": user.userMecca,
-      "userWeapon": user.userWeapon,
-      "userArmor": user.userArmor,
-      "userLevel": user.userLevel + 1,
-      "userXP": 0,
-      "userHealth": user.userHealth + 100
-    };
-    
-    Player[RawUserID] = string(y);
-    msg = "```md\nLevel Up!\n==========\nYou just leveled up!```";
+  for (var f = 0; f < 10; f++) {
+    if(user.userXP === Math.floor((user.userLevel * 100) / 0.04)) {
+      var y = {
+        "userName": Username,
+        "userSouls": user.userSouls,
+        "userMecca": user.userMecca,
+        "userWeapon": user.userWeapon,
+        "userArmor": user.userArmor,
+        "userLevel": user.userLevel + 1,
+        "userXP": 0,
+        "userHealth": user.userHealth + 100
+      };
+      Player[RawUserID] = string(y);
+      msg = "```md\nLevel Up!\n==========\nYou just leveled up!```";
+    }
   }
 }
 
