@@ -388,4 +388,5 @@ function addRewards() {
     };
     Player[RawUserID] = string(x);
   }
+  checkXP();
 }
