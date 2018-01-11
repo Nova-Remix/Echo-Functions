@@ -297,8 +297,9 @@ function viewShop(user, weapon, armour) {
 }
 
 function ghost() {
-  var ghigh = user.userHealth / 4;
-  var glow = user.userHealth / 10;
+  var maxhealth = user.userLevel * 100;
+  var ghigh = maxhealth / 4;
+  var glow = maxhealth / 10;
   var ghostwpndmg = parse(weaponStats[user.userWeapon]).DMG;
   if(string(ghostwpndmg).indexOf("-") > -1) {
     var ghosttotaldmg = ghostwpndmg.split("-");
@@ -338,6 +339,7 @@ function newGhost() {
 }
 
 function checkXP() {
+  var maxhealth = (user.userLevel + 1) * 100;
   if(user.userXP === Math.floor((user.userLevel * 100) / 0.04) - 500) {
     var y = {
       "userName": Username,
@@ -347,7 +349,7 @@ function checkXP() {
       "userArmor": user.userArmor,
       "userLevel": user.userLevel + 1,
       "userXP": 0,
-      "userHealth": user.userHealth + 100
+      "userHealth": maxhealth
     };
     Player[RawUserID] = string(y);
     msg += "```md\nLevel Up!\n==========\nYou just leveled up!```";
