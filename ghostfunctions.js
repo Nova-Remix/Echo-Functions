@@ -328,8 +328,8 @@ function newGhost() {
   
   var newghost = {
     "Health": parse(ghost.Health) - parse(dmg),
-    "Damage": ghstdmg;
-  }
+    "Damage": ghstdmg
+  };
   
   Player[RawUserID + "-Ghost"] = string(newghost);
   msg = "```md\nAttack\n=======\nYou dealt " + dmg + " Damage!\nThe Ghost now has " + (ghost.Health - dmg) + " Health!```";
@@ -391,6 +391,20 @@ function addRewards() {
 function ghostAttack(usedmg) {
   if(user.userHealth <= usedmg) {
     msg += "```md\nYou Died!\n==========\nThe ghost has killed you!\nType in ?heal to purchase full health!```";
+    
+    var f = {
+      "userName": Username,
+      "userSouls": user.userSouls,
+      "userMecca": user.userMecca,
+      "userWeapon": user.userWeapon,
+      "userArmor": user.userArmor,
+      "userLevel": user.userLevel,
+      "userXP": user.userXP,
+      "userHealth": user.userHealth - usedmg
+    };
+    
+    Player[RawUserID] = string(f);
+
   } else {
     var f = {
       "userName": Username,
