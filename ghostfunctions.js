@@ -320,7 +320,7 @@ function newGhost() {
   if(string(ghstweapondmg).indexOf("-") > -1) {
     var ghsttotaldmg = ghstweapondmg.split("-");
     var ghstdmg = rNum(parse(ghsttotaldmg[0]), parse(ghsttotaldmg[1]) + 1);
-    var dmg = rNum(parse(ghsttotaldmg[0]), parse(ghsttotaldmg[1] + 1));
+    var dmg = rNum(parse(ghsttotaldmg[0]), parse(ghsttotaldmg[1]) + 1);
   } else {
     var ghstdmg = ghstweapondmg;
     var dmg = ghstweapondmg;
