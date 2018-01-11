@@ -389,7 +389,7 @@ function addRewards() {
 }
 
 function ghostAttack(usedmg) {
-  if(user.Health <= usedmg) {
+  if(user.userHealth <= usedmg) {
     msg += "```md\nYou Died!\n==========\nThe ghost has killed you!\nType in ?heal to purchase full health!```";
   } else {
     var f = {
