@@ -298,45 +298,43 @@ function viewShop(user, weapon, armour) {
 
 function ghost() {
   var ghigh = user.userHealth / 4;
-  var glow = user.userHealth / 10
+  var glow = user.userHealth / 10;
+  var ghostwpndmg = parse(weaponStats[user.userWeapon]).DMG;
+  if(string(ghostwpndmg).indexOf("-") > -1) {
+    var ghosttotaldmg = ghostwpndmg.split("-");
+    var ghostdmg = rNum(parse(ghosttotaldmg[0]), parse(ghosttotaldmg[1]) + 1);
+  } else {
+    var ghostdmg = ghostwpndmg;
+  }
+  
   var ghost = {
     "Health": rNum(glow, ghigh),
-    "Damage": rNum(glow, ghigh)
+    "Damage": ghostdmg
   };
-  
   Player[RawUserID + "-Ghost"] = string(ghost);
-  
   msg = "```md\nGhost Found!\n=============\nYou found a level " + (user.userLevel + 1) + " ghost with " + parse(Player[RawUserID + "-Ghost"]).Health + " health!```";
 }
 
 function newGhost() {
+  var ghstweapondmg = parse(weaponStats[user.userWeapon]).DMG;
+  if(string(ghstweapondmg).indexOf("-") > -1) {
+    var ghsttotaldmg = ghstweapondmg.split("-");
+    var ghstdmg = rNum(parse(ghsttotaldmg[0]), parse(ghsttotaldmg[1]) + 1);
+    var dmg = rNum(parse(ghsttotaldmg[0]), parse(ghsttotaldmg[1] + 1));
+  } else {
+    var ghstdmg = ghstweapondmg;
+    var dmg = ghstweapondmg;
+  }
+  
   var newghost = {
     "Health": parse(ghost.Health) - parse(dmg),
-    "Damage": parse(ghost.Damage)
+    "Damage": ghstweapondmg;
   }
-
-  Player[RawUserID + "-Ghost"] = string(newghost);
   
+  Player[RawUserID + "-Ghost"] = string(newghost);
   msg = "```md\nAttack\n=======\nYou dealt " + dmg + " Damage\nThe Ghost now has " + (ghost.Health - dmg) + " Health```";
-}
-
-function checkHealth() {
-  if(parse(ghost.Health <= 0)) {
-    delete Player[RawUserID + "-Ghost"];
-    msg = "```md\nX_X\n====\nYou killed the ghost! You have earned " + 500 + " XP```";
-    addRewards();
-    var m = {
-      "userName": Username,
-      "userSouls": user.userSouls,
-      "userMecca": user.userMecca,
-      "userWeapon": user.userWeapon,
-      "userArmor": user.userArmor,
-      "userLevel": user.userLevel,
-      "userXP": user.userXP + 500,
-      "userHealth": user.userHealth
-    };
-    Player[RawUserID] = string(m);
-  }
+  
+  ghostAttack(ghstdmg);
 }
 
 function checkXP() {
@@ -389,3 +387,20 @@ function addRewards() {
   }
   checkXP();
 }
+
+function ghostAttack(usedmg) {
+  if(user.Health <= usedmg) {
+    msg += "```md\nYou Died!\n==========\nThe ghost has killed you!\nType in ?heal to purchase full health!```";
+  } else {
+    var b = {
+      "userName": Username,
+      "userSouls": user.userSouls,
+      "userMecca": user.userMecca,
+      "userWeapon": user.userWeapon,
+      "userArmor": user.userArmor,
+      "userLevel": user.userLevel,
+      "userXP": user.userXP,
+      "userHealth": user.userHealth - usedmg
+    };
+
+    msg += "```
