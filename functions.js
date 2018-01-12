@@ -658,3 +658,12 @@ function getAPI(api, grab) {
     }
   }
 }  
+
+function delVar(array, item) {
+  if(!array || !item) return send("Nope, sorry. You need to provide both the array and item.");
+  if(array.indexOf(item) > -1) {
+    array.splice(array.indexOf(item), 1);
+  } else {
+    return send("Variable " + item + " doesn't exist in the array!");
+  }
+}
