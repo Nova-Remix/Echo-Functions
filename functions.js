@@ -659,10 +659,10 @@ function getAPI(api, grab) {
   }
 }  
 
-function delVar(array, item) {
-  if(!array || !item) return send("Nope, sorry. You need to provide both the array and item.");
-  if(array.indexOf(item) > -1) {
-    array.splice(array.indexOf(item), 1);
+function delVar(usethis, item) {
+  if(!usethis || !item) return send("Nope, sorry. You need to provide both the array and item.");
+  if(usethis.indexOf(item) > -1) {
+    usethis.splice(usethis.indexOf(item), 1);
   } else {
     return send("Variable " + item + " doesn't exist in the array!");
   }
